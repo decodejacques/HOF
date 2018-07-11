@@ -1,63 +1,3 @@
-
-function callNoException(f, arg) {
-    // if f(arg) throws an exception, return null
-    // otherwise return what f(arg) returned
-    // Example:
-    //  function throwsZero(x){
-    //     if(x==0) throw new Error("woops");
-    //     return x;
-    //  }
-    //  callNoException(throwsZero, 0) returns null
-    //  callNoException(throwsZero, 12) returns 12
-}
-
-function callNoNull(f, arg) {
-    // if f(arg) returns null, throw an exception
-    // otherwise return what f(arg) returned  
-    // Example: 
-    //  function nullZero(x) {
-    //     if(x==0) return null;
-    //     return x;
-    //  }
-    // callNoNull(nullZero, 0) throws an exception
-    // callNoNull(nullZero, 12) returns 12
-    
-    
-}
-
-function exceptionalize(f) {
-    // returns a new function
-    // this function takes 1 input, called arg
-    // if f(arg) is null, this new function throws an exception
-    // otherwise it returns what f(arg) returned
-    // difference with callNoNull: callNoNull doesn't return a function
-    // Example: 
-    //  function nullZero(x) {
-    //     if(x==0) return null;
-    //     return x;
-    //  }
-    // exceptionalize(nullZero) returns a function g such that
-    // g(0) throws an exception
-    // g(12) returns 12
-
-}
-
-function nullify(f) {
-    // returns a new function
-    // this function takes 1 input, called arg
-    // if f(arg) throws an exception, this new function returns null
-    // otherwise it returns what f(arg) returned
-    // Example
-    //  function throwsZero(x){
-    //     if(x==0) throw new Error("woops");
-    //     return x;
-    //  }
-    //  nullify(throwsZero) returns a function g such that
-    //  g(0) returns null
-    //  g(12) throws an exception
-    
-}
-
 function map(lst, f) {
     // lst is an array and f is a function
     // map returns an array with the same number of elements as lst
@@ -97,10 +37,6 @@ function every(lst, f) {
 
 
 module.exports = {
-    callNoException, 
-    callNoNull,
-    exceptionalize, 
-    nullify,
     map, 
     filter, 
     every

@@ -1,59 +1,9 @@
 let expect = require('chai').expect;
 
 let funcs = require('../src/problem1.js');
-let callNoException =  funcs.callNoException;
-let callNoNull = funcs.callNoNull;
-let exceptionalize = funcs.exceptionalize; 
-let nullify = funcs.nullify;
 let map = funcs.map; 
 let filter = funcs.filter; 
 let every = funcs.every;
-
-function throwsZero(x){
-    if(x==0) throw new Error("woops");
-    return x;
-}
-function nullZero(x) {
-    if(x==0) return null;
-    return x;
-}
-
-
-describe('callNoException', function() {
-    it('suppresses exceptions', function() {
-        expect(callNoException(throwsZero, 0)).to.eq(null);
-    });
-    it('otherwise returns the same value', function() {
-        expect(callNoException(throwsZero, 12)).to.eq(12);
-    });
-});
-
-describe('callNoNull', function() {
-    it('suppresses null', function() {
-        expect(() => callNoNull(nullZero, 0)).to.throw();
-    });
-    it('otherwise returns the same value', function() {
-        expect(callNoNull(nullZero, 12)).to.eq(12);
-    });
-});
-
-describe('exceptionalize', function() {
-    it('suppresses exceptions', function() {
-        expect(() => exceptionalize(nullZero)(0)).to.throw();
-    });
-    it('otherwise returns the same value', function() {
-        expect(exceptionalize(nullZero)(12)).to.eq(12);        
-    });
-});
-
-describe('nullify', function() {
-    it('suppresses exceptions', function() {
-        expect(nullify(throwsZero)(0)).to.eq(null);
-    });
-    it('otherwise returns the same value', function() {
-        expect(nullify(throwsZero)(12)).to.eq(12);        
-    });
-});
 
 describe('map', function() {
     it('maps', function() {
