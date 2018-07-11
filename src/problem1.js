@@ -1,4 +1,5 @@
 function map(lst, f) {
+    // FORBIDDEN TO USE THE BUILTIN map FUNCTION
     // lst is an array and f is a function
     // map returns an array with the same number of elements as lst
     // if lst = [a1, a2, a3, a4, a5] then map(lst, f) returns [f(a1), f(a2), f(a3), f(a4), f(a5)]
@@ -12,6 +13,7 @@ function map(lst, f) {
 }
 
 function filter(lst, f) {
+    // FORBIDDEN TO USE THE BUILTIN filter FUNCTION
     // lst is an array and f is a function
     // f takes one argument and returns a boolean (true or false)
     // filter(lst, f) returns a list with all the elements of lst that does not satisfy f removed
@@ -26,6 +28,7 @@ function filter(lst, f) {
 }
 
 function every(lst, f) {
+    // FORBIDDEN TO USE THE BUILTIN every FUNCTION
     // lst is an array and f is a function
     // f takes 1 arguments and returns a boolean
     // filter(lst, f) returns a true if f returns true for every element of lst
